@@ -1,0 +1,18 @@
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.quiz-description {
+  display: flex;
+  margin: 1vh 0;
+}
+
+@media (max-width: 768px) {
+  .quiz-description {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

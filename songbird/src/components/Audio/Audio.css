@@ -1,0 +1,17 @@
+.audio {
+  width: 400px;
+  height: 30px;
+  outline: none;
+  transition: all 0.5s linear;
+  filter: sepia(100%) saturate(450%) grayscale(5%) contrast(200%) hue-rotate(358deg) invert(96%);
+}
+
+.audio:hover, audio:active, audio:focus {
+  transform: scale(1.05);
+}
+
+@media (max-width: 970px) {
+  .audio {
+    width: 270px;
+  }
+}

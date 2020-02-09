@@ -1,0 +1,33 @@
+.quiz-type-item {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 140px;
+  padding: 0 7px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(224, 222, 222);
+  background-color: rgb(35, 13, 116);
+}
+
+.quiz-type-active {
+  background-color: rgb(35, 13, 116, 0.6);
+}
+
+@media (max-width: 1100px) {
+  .quiz-type-item {
+    margin: 4px;
+  }
+}
+
+@media (max-width: 370px) {
+  .quiz-type-item {
+    width: 120px;
+    margin: 2px;
+    font-size: 15px;
+  }
+}
+

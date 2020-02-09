@@ -1,0 +1,22 @@
+.bird-item {
+  display: inline-block;
+  width: 94%;
+  padding: 3%;
+  border-bottom: 2px solid rgb(35, 13, 116, 0.2);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bird-item:hover {
+  background-color: rgb(129, 112, 175);
+}
+
+.bird-item-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px 1px 0;
+  border-radius: 50%;
+  background-color: rgb(35, 13, 116, 0.5);
+}
