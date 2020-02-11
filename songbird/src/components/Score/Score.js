@@ -1,10 +1,9 @@
 import React from 'react';
 import './Score.css';
 
-const Score = () => {
-  let score = 'Счёт: 20';  
+function Score (props) { 
   return (
-    <div className="score">{score}</div>
+    <div className="score">Счёт: {props.score}</div>
   );
 }
 

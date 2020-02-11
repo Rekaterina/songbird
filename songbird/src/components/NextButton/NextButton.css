@@ -16,4 +16,5 @@
 .next-button-active {
   color: rgb(224, 222, 222);
   background-color: rgb(35, 13, 116);
+  cursor: pointer;
 }

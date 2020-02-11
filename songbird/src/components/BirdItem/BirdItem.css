@@ -20,3 +20,11 @@
   border-radius: 50%;
   background-color: rgb(35, 13, 116, 0.5);
 }
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}

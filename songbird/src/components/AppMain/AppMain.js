@@ -6,18 +6,35 @@ import BirdList from '../BirdList/BirdList';
 import BirdCard from '../BirdCard/BirdCard';
 import NextButton from '../NextButton/NextButton';
 import ResultCard from '../ResultCard/ResultCard';
+import birdsData from '../../birdsData';
 
-class AppMain extends React.Component {
-  render() {
+function AppMain(props) {
+  if (props.isQuizOver) {
+    return <ResultCard score={props.score} />
+  } else {
     return (
       <div className="app-main">
-        <QuizCard />
+        <QuizCard birdsData={birdsData}
+                  typeQuizIndex={props.typeQuizIndex} 
+                  randomBirdIndex={props.randomBirdIndex}
+                  isAnswerTrue={props.isAnswerTrue} />
         <div className="quiz-description">
-          <BirdList />
-          <BirdCard />
+          <BirdList birdsData={birdsData} 
+                    typeQuizIndex={props.typeQuizIndex}
+                    chosenBirdIndex={props.chosenBirdIndex}
+                    randomBirdIndex={props.randomBirdIndex}
+                    isAnswerChosen={props.isAnswerChosen}
+                    isAnswerTrue={props.isAnswerTrue}
+                    toggleFlagIsAnswerChosen={props.toggleFlagIsAnswerChosen}
+                    toggleFlagIsAnswerTrue={props.toggleFlagIsAnswerTrue}
+                    toggleFlagIsNextLevelActive={props.toggleFlagIsNextLevelActive}
+                    setChosenBirdIndex={props.setChosenBirdIndex} />
+          <BirdCard birdsData={birdsData}
+                    typeQuizIndex={props.typeQuizIndex} 
+                    chosenBirdIndex={props.chosenBirdIndex}
+                    isAnswerChosen={props.isAnswerChosen}/>
         </div>
         <NextButton />
-        <ResultCard />
       </div>
     );
   }

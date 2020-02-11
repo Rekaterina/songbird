@@ -7,12 +7,12 @@ import quizTypeData from '../../quizTypeData';
 
 import './AppHeader.css';
 
-const AppHeader = () => {
+function AppHeader(props) {
   return (
     <div className="app-header">
       <div className="top-bar">
         <Logo />
-        <Score />
+        <Score score={props.score}/>
       </div>
       <QuizTypeList quizTypeData={quizTypeData}/>
    </div>

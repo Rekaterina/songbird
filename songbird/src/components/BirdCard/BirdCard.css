@@ -30,6 +30,7 @@
 
 .bird-card-text {
   margin-top: 10px;
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
