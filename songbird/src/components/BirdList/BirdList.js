@@ -20,7 +20,8 @@ function BirdList(props) {
               setChosenBirdIndex={props.setChosenBirdIndex}
               countScore={props.countScore}
               playWrongSound={props.playWrongSound}
-              playCorrectSound={props.playCorrectSound} />
+              playCorrectSound={props.playCorrectSound}
+              stopAudio={props.stopAudio} />
   );
   return (
     <ul className="bird-list">

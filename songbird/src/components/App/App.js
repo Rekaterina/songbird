@@ -106,6 +106,11 @@ class App extends Component {
     correctSound.play();
   }
 
+  stopAudio() {
+    const audio = document.querySelector('.audio');
+    audio.pause();
+  }
+
   render() {
     return (
       <div className="app">
@@ -127,6 +132,7 @@ class App extends Component {
                  setInitialState={this.setInitialState.bind(this)}
                  playWrongSound={this.playWrongSound.bind(this)}
                  playCorrectSound={this.playCorrectSound.bind(this)}
+                 stopAudio={this.stopAudio.bind(this)}
                  isQuizOver={this.state.isQuizOver}
                  score={this.state.score}
                  isNextLevelActive={this.state.isNextLevelActive} />

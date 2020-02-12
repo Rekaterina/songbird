@@ -37,7 +37,8 @@ function AppMain(props) {
                     setChosenBirdIndex={props.setChosenBirdIndex}
                     countScore={props.countScore}
                     playWrongSound={props.playWrongSound}
-                    playCorrectSound={props.playCorrectSound} />
+                    playCorrectSound={props.playCorrectSound}
+                    stopAudio={props.stopAudio} />
           <BirdCard birdsData={birdsData}
                     typeQuizIndex={props.typeQuizIndex} 
                     chosenBirdIndex={props.chosenBirdIndex}

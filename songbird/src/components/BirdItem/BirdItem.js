@@ -18,6 +18,7 @@ function BirdItem(props) {
       if (!isAnswerTrue) {
         props.playCorrectSound();
       }
+      props.stopAudio();
     } else {
       if (!isAnswerTrue) {
         target.tagName === 'LI' ? target.firstElementChild.classList.add('red') : target.classList.add('red');
