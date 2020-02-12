@@ -96,6 +96,16 @@ class App extends Component {
     birdItemIndicators.forEach((item) => item.classList.remove('red', 'green')); 
   }
 
+  playWrongSound() {
+    const wrongSound = document.querySelector('.wrong');
+    wrongSound.play();
+  }
+
+  playCorrectSound() {
+    const correctSound = document.querySelector('.correct');
+    correctSound.play();
+  }
+
   render() {
     return (
       <div className="app">
@@ -115,6 +125,8 @@ class App extends Component {
                  removeIndicators={this.removeIndicators.bind(this)}
                  toggleFlagIsQuizOver={this.toggleFlagIsQuizOver.bind(this)}
                  setInitialState={this.setInitialState.bind(this)}
+                 playWrongSound={this.playWrongSound.bind(this)}
+                 playCorrectSound={this.playCorrectSound.bind(this)}
                  isQuizOver={this.state.isQuizOver}
                  score={this.state.score}
                  isNextLevelActive={this.state.isNextLevelActive} />

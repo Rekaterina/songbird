@@ -18,7 +18,9 @@ function BirdList(props) {
               toggleFlagIsAnswerTrue={props.toggleFlagIsAnswerTrue}
               toggleFlagIsNextLevelActive={props.toggleFlagIsNextLevelActive}
               setChosenBirdIndex={props.setChosenBirdIndex}
-              countScore={props.countScore} />
+              countScore={props.countScore}
+              playWrongSound={props.playWrongSound}
+              playCorrectSound={props.playCorrectSound} />
   );
   return (
     <ul className="bird-list">

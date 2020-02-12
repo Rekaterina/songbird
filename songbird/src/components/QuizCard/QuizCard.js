@@ -6,6 +6,7 @@ import Audio from '../Audio/Audio';
 import bird from '../../image/bird.jpg';
 
 function QuizCard(props) {
+  const className = 'audio';
   const { randomBirdIndex, birdsData, typeQuizIndex, isAnswerTrue } = props;
   return (
     <div className="quiz-card">
@@ -16,9 +17,8 @@ function QuizCard(props) {
       )}
       <div className="quiz-card-audio-container">
         <span className="quiz-card-bird-name">{isAnswerTrue ? `${birdsData[typeQuizIndex][randomBirdIndex].name}` : '******'}</span> 
-        <Audio typeQuizIndex={props.typeQuizIndex} 
-               birdIndex={props.randomBirdIndex}
-               birdsData={props.birdsData} />  
+        <Audio className={className} 
+               src={birdsData[typeQuizIndex][randomBirdIndex].audio} />  
       </div>
     </div>
   );

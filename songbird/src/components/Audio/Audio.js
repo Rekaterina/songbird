@@ -3,9 +3,8 @@ import React from 'react';
 import './Audio.css';
 
 function Audio(props) {
-  const { birdsData, typeQuizIndex, birdIndex } = props;
   return (
-    <audio className="audio" src={birdsData[typeQuizIndex][birdIndex].audio} controls></audio>
+    <audio className={props.className} src={props.src} controls></audio>
   );
 }
 

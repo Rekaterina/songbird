@@ -5,6 +5,7 @@ import Audio from '../Audio/Audio';
 import './BirdCard.css';
 
 function BirdCard(props) {
+  const className = 'audio';
   const { birdsData, chosenBirdIndex, typeQuizIndex } = props;
   if (props.isAnswerChosen) {
     return (
@@ -14,9 +15,8 @@ function BirdCard(props) {
           <div className="bird-card-audio-container">
             <span className="bird-card-name">{birdsData[typeQuizIndex][chosenBirdIndex].name}</span>
             <span className="bird-card-latin-name">{birdsData[typeQuizIndex][chosenBirdIndex].species}</span> 
-            <Audio typeQuizIndex={props.typeQuizIndex} 
-                   birdIndex={props.chosenBirdIndex}
-                   birdsData={props.birdsData} />  
+            <Audio className={className}  
+                   src={birdsData[typeQuizIndex][chosenBirdIndex].audio} />  
           </div>
         </div>
         <p className="bird-card-text">

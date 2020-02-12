@@ -15,9 +15,13 @@ function BirdItem(props) {
       props.toggleFlagIsNextLevelActive();
       props.setChosenBirdIndex(chosenBirdNameIndex);
       props.countScore();
+      if (!isAnswerTrue) {
+        props.playCorrectSound();
+      }
     } else {
       if (!isAnswerTrue) {
         target.tagName === 'LI' ? target.firstElementChild.classList.add('red') : target.classList.add('red');
+        props.playWrongSound();
       }
       props.toggleFlagIsAnswerChosen();
       props.setChosenBirdIndex(chosenBirdNameIndex);
