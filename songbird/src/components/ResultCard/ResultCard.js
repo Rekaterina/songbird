@@ -8,7 +8,7 @@ function ResultCard(props) {
       <div className="result-card">
         <p className="result-card-congratulation">Поздравляем!</p>
         <p className="result-card-text">Вы прошли викторину и набрали {props.score} из 30 возможных баллов</p>
-        <StartButton />
+        <StartButton setInitialState={props.setInitialState} />
       </div>
       
     );

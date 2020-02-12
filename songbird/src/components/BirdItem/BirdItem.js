@@ -14,6 +14,7 @@ function BirdItem(props) {
       props.toggleFlagIsAnswerTrue();
       props.toggleFlagIsNextLevelActive();
       props.setChosenBirdIndex(chosenBirdNameIndex);
+      props.countScore();
     } else {
       if (!isAnswerTrue) {
         target.tagName === 'LI' ? target.firstElementChild.classList.add('red') : target.classList.add('red');

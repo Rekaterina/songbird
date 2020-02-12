@@ -14,7 +14,8 @@ function AppHeader(props) {
         <Logo />
         <Score score={props.score}/>
       </div>
-      <QuizTypeList quizTypeData={quizTypeData}/>
+      <QuizTypeList quizTypeData={quizTypeData}
+                    typeQuizIndex={props.typeQuizIndex}/>
    </div>
   );
 };

@@ -10,7 +10,8 @@ import birdsData from '../../birdsData';
 
 function AppMain(props) {
   if (props.isQuizOver) {
-    return <ResultCard score={props.score} />
+    return <ResultCard score={props.score}
+                       setInitialState={props.setInitialState} />
   } else {
     return (
       <div className="app-main">
@@ -28,13 +29,18 @@ function AppMain(props) {
                     toggleFlagIsAnswerChosen={props.toggleFlagIsAnswerChosen}
                     toggleFlagIsAnswerTrue={props.toggleFlagIsAnswerTrue}
                     toggleFlagIsNextLevelActive={props.toggleFlagIsNextLevelActive}
-                    setChosenBirdIndex={props.setChosenBirdIndex} />
+                    setChosenBirdIndex={props.setChosenBirdIndex}
+                    countScore={props.countScore} />
           <BirdCard birdsData={birdsData}
                     typeQuizIndex={props.typeQuizIndex} 
                     chosenBirdIndex={props.chosenBirdIndex}
                     isAnswerChosen={props.isAnswerChosen}/>
         </div>
-        <NextButton />
+        <NextButton isNextLevelActive={props.isNextLevelActive}
+                    typeQuizIndex={props.typeQuizIndex}
+                    setStateNextRound={props.setStateNextRound}
+                    removeIndicators={props.removeIndicators}
+                    toggleFlagIsQuizOver={props.toggleFlagIsQuizOver} />
       </div>
     );
   }

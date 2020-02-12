@@ -17,7 +17,8 @@ function BirdList(props) {
               toggleFlagIsAnswerChosen={props.toggleFlagIsAnswerChosen}
               toggleFlagIsAnswerTrue={props.toggleFlagIsAnswerTrue}
               toggleFlagIsNextLevelActive={props.toggleFlagIsNextLevelActive}
-              setChosenBirdIndex={props.setChosenBirdIndex} />
+              setChosenBirdIndex={props.setChosenBirdIndex}
+              countScore={props.countScore} />
   );
   return (
     <ul className="bird-list">

@@ -45,13 +45,62 @@ class App extends Component {
     this.setState({
       isNextLevelActive: true
     });
-    document.querySelector('.next-button').classList.add('next-button-active');
+  }
+
+  toggleFlagIsQuizOver() {
+    this.setState({
+      isQuizOver: true
+    });
+  }
+
+  countScore() {
+    const birdItemIndicators = document.querySelectorAll('.bird-item-indicator');
+    let wrongAnswersNumber = 0;
+    birdItemIndicators.forEach(item => {
+      if (item.classList.contains('red')) {
+        wrongAnswersNumber = wrongAnswersNumber + 1;
+      }
+    });
+    const roundScore = 5 - wrongAnswersNumber;
+    this.setState({
+      score: this.state.score + roundScore
+    });
+  }
+
+  setStateNextRound() {
+    this.setState({
+      typeQuizIndex: this.state.typeQuizIndex + 1,
+      randomBirdIndex: this.getRandomNumber(0, 5),
+      isAnswerChosen: false,
+      chosenBirdIndex: null,
+      isAnswerTrue: false,
+      isNextLevelActive: false,
+    });
+  }
+
+  setInitialState() {
+    this.setState({
+      score: 0,
+      typeQuizIndex: 0,
+      randomBirdIndex: this.getRandomNumber(0, 5),
+      isAnswerChosen: false,
+      chosenBirdIndex: null,
+      isAnswerTrue: false,
+      isQuizOver: false,
+      isNextLevelActive: false,
+    });
+  }
+
+  removeIndicators() {
+    const birdItemIndicators = document.querySelectorAll('.bird-item-indicator');
+    birdItemIndicators.forEach((item) => item.classList.remove('red', 'green')); 
   }
 
   render() {
     return (
       <div className="app">
-        <AppHeader score={this.state.score} />
+        <AppHeader score={this.state.score}
+                   typeQuizIndex={this.state.typeQuizIndex} />
         <AppMain typeQuizIndex={this.state.typeQuizIndex} 
                  randomBirdIndex={this.state.randomBirdIndex}
                  chosenBirdIndex={this.state.chosenBirdIndex}
@@ -61,8 +110,14 @@ class App extends Component {
                  toggleFlagIsAnswerTrue={this.toggleFlagIsAnswerTrue.bind(this)}
                  toggleFlagIsNextLevelActive={this.toggleFlagIsNextLevelActive.bind(this)}
                  setChosenBirdIndex={this.setChosenBirdIndex.bind(this)}
+                 countScore={this.countScore.bind(this)}
+                 setStateNextRound={this.setStateNextRound.bind(this)}
+                 removeIndicators={this.removeIndicators.bind(this)}
+                 toggleFlagIsQuizOver={this.toggleFlagIsQuizOver.bind(this)}
+                 setInitialState={this.setInitialState.bind(this)}
                  isQuizOver={this.state.isQuizOver}
-                 score={this.state.score} />
+                 score={this.state.score}
+                 isNextLevelActive={this.state.isNextLevelActive} />
       </div>
     );
   }
