@@ -1,0 +1,10 @@
+.score {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+@media (max-width: 370px) {
+  .score {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,14 @@
+.bird-list {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  list-style: none;
+  margin: 1%;
+}
+
+@media (max-width: 768px) {
+  .bird-list {
+    width: 60%;
+    margin: 2%;
+  }
+}
